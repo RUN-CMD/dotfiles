@@ -1,5 +1,10 @@
 # .bashrc
 
+if [ -f ~/.bashrc_ubuntu ]; then
+   source ~/.bashrc_ubuntu
+fi
+
+
 # User specific aliases and functions
 
 alias rm='rm -i'
@@ -10,12 +15,6 @@ alias lsd='ls -hal1 | grep ^d'
 alias cuc='cucumber --tags ~@watir'
 alias cucp='cucumber -fprogress --tags ~@watir'
 alias git-wtf='~/script/git-wtf'
-
-export AUTOFEATURE=true
-export RSPEC=true
-export M3_APP_PATH=/rubydev/m3
-
-cd /rubydev
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
