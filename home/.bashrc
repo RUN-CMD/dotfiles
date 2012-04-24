@@ -1,5 +1,10 @@
 # .bashrc
 
+if [ -f ~/.bashrc_ubuntu ]; then
+   source ~/.bashrc_ubuntu
+fi
+
+
 # User specific aliases and functions
 
 alias rm='rm -i'
@@ -54,7 +59,3 @@ PS2='> '
 PS4='+ '
 }
 prompt
-
-if [ -f ~/.bashrc_ubuntu ]; then
-    source ~/.bashrc_ubuntu
-fi
