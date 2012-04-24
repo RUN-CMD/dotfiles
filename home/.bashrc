@@ -60,3 +60,5 @@ PS2='> '
 PS4='+ '
 }
 prompt
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
