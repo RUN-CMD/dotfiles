@@ -1,0 +1,10 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+  df = diff
+  dc = diff --cached
+[user]
+	email = karl.sandwich@gmail.com
+	name = Karl Sandwich
