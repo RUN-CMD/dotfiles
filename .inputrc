@@ -1,3 +1,0 @@
-bind -v
-set -o vi
-set editing-mode vi
