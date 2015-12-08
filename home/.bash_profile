@@ -7,6 +7,11 @@ export NVM_DIR="/Users/ksandwich/.nvm"
 # vim terminal editing mode
 set -o vi
 
+# Aliases
+
+# Jekyll ack-grep
+alias jack=ack --ignore-dir=_site
+
 # Prompt
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
