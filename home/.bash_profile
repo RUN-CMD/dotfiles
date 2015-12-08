@@ -10,7 +10,7 @@ set -o vi
 # Aliases
 
 # Jekyll ack-grep
-alias jack=ack --ignore-dir=_site
+alias jack="ack --ignore-dir=_site"
 
 # Prompt
 function parse_git_branch {
