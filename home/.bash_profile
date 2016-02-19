@@ -6,11 +6,18 @@ export NVM_DIR="/Users/ksandwich/.nvm"
 
 # vim terminal editing mode
 set -o vi
+set editing-mode vi
 
 # Aliases
-
-# Jekyll ack-grep
-alias jack="ack --ignore-dir=_site"
+alias cda='cd ~/src/ruby_agent/'
+alias cdd='cd ~/src/ruby_agent/'
+alias cg='cd ~/src/gems/'
+alias be='bundle exec'
+alias bb='bundle install'
+alias qh="NEW_RELIC_DATA_REPORT_PERIOD='10'" # "Quick Harvest"
+alias acki='ack -i'
+alias glh='git lg | head'
+alias dot='dot -Tpng:quartz:quartz'
 
 # Prompt
 function parse_git_branch {
@@ -21,6 +28,10 @@ function parse_git_branch {
 function git_dirty {
   git diff --quiet HEAD &>/dev/null
   [ $? == 1 ] && echo "!" 
+}
+
+function current_ruby {
+  ruby -v | cut -d" " -f2
 }
 
 function prompt {
@@ -43,9 +54,17 @@ function prompt {
   esac
 
 PS1="${TITLEBAR}\
-$LIGHT_GRAY\u@\h:\w$YELLOW\$(parse_git_branch)\
+$LIGHT_GRAY\u@\h:\
+$RED(\$(current_ruby))$LIGHT_GRAY\
+\w$YELLOW\$(parse_git_branch)\
 $RED\$(git_dirty)$NONE\$ "
 PS2='> '
 PS4='+ '
 }
 prompt
+
+# Helpers
+source /usr/local/share/chruby/chruby.sh
+
+# Set the default ruby
+chruby 2.3.0
